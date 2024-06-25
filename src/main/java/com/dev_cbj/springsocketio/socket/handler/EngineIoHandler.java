@@ -177,9 +177,7 @@ public class EngineIoHandler implements HandshakeInterceptor, org.springframewor
 	 * @param data 전송할 데이터
 	 */
 	public void sendDataToWebSocket(Object data) {
-		MAP.forEach((key, value) -> {
-			sendDataToWebSocket("public", data);
-		});
+		sendDataToWebSocket("public", data);
 	}
 	
 	/**
