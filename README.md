@@ -6,12 +6,6 @@
 
 - [Install And Run](#install)
 - [Reference](#reference)
-- [Usage](#usage)
-- [Configuration](#configuration)
-- [Project Structure](#project-structure)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Install
 
