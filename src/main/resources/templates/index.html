@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Spring + Socket IO</title>
+</head>
+<body>
+    <h1>Spring + Socket IO</h1>
+    <h2>Public Chanel</h2>
+    <input type="text" id="publicInput">
+    <button id="publicButton">Send Public Message</button>
+    <div id="public"></div>
+    <h2>Private Chanel</h2>
+    <input type="text" id="privateInput">
+    <button id="privateButton">Send Private Message</button>
+    <div id="message"></div>
+
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+    <script>
+        const socket = io('http://localhost:8080/ws');
+        socket.on('public', message => {
+            const currentMessage = document.getElementById('public').innerHTML;
+            message = currentMessage + '<br/>' + message;
+            document.getElementById('public').innerHTML = message;
+        });
+        socket.on('message', message => {
+            const currentMessage = document.getElementById('message').innerHTML;
+            message = currentMessage + '<br/>' + message;
+            document.getElementById('message').innerHTML = message;
+        });
+
+        document.getElementById('publicButton').addEventListener('click', () => {
+            const message = document.getElementById('publicInput').value;
+            socket.emit('public', message);
+        });
+
+        document.getElementById('privateButton').addEventListener('click', () => {
+            const message = document.getElementById('privateInput').value;
+            socket.emit('message', message);
+        });
+    </script>
+</body>
+</html>
