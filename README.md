@@ -2,7 +2,8 @@
 
 기존 Sock.js만 이용해야해서 불편했던 부분들을 개선하기 위해 Socket-IO를 이용할 수 있도록 모듈을 만들었습니다.<br>
 기존에 웹에 많이 떠돌아다니는 com.corundumstudio.socketio:netty-socketio 라이브러리를 이용한 socket-io서버의 경우 포트를 추가로 하나 더 뽑아서 사용해야하는 단점이 있기때문에,
-socket-io 공식 라이브러리를 이용하여 하나의 포트에서 처리하는 모듈입니다.
+socket-io 공식 라이브러리를 이용하여 하나의 포트에서 처리하는 모듈입니다.<br><br>
+대부분의 중요 비즈니스 로직은 EngineIoHandler.java 파일에 구현되어있습니다.
 
 ## 목차
 
